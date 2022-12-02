@@ -106,7 +106,7 @@ if __name__ == '__main__':
 
     for y in range(0,199):
         for i in range(0,69):
-            print(img[i][y] ," - Pixel(",i , "--- ",y,")")
+            # print(img[i][y] ," - Pixel(",i , "--- ",y,")")
             # img[i][y]  = 0.35
             if(  img[i][y] > 0.45 and img[i][y] < 0.57 ):
                 img[i][y]  = 0
@@ -123,7 +123,7 @@ if __name__ == '__main__':
     print("Pixel is :",img.shape)
     plt.show()
     
-  
+    print("\n Result :")
     # Adding custom options
     custom_config = r'--oem 3 --psm 6'
     results = pytesseract.image_to_string(np.array(Image.fromarray((img * 255).astype(np.uint8)).resize((199, 69)).convert('LA')), config=custom_config)
